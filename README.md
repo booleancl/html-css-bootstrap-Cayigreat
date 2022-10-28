@@ -94,7 +94,7 @@ Los links son el corazón de internet y los crearemos frecuentemente. Se compone
 
 ```html
  <a href="headings.html">Títulos</a>
- `
+ ```
 
  ### Imagénes
 
@@ -106,6 +106,12 @@ Los links son el corazón de internet y los crearemos frecuentemente. Se compone
 #### Ordenadas
 
 ```html  
+  <ul> Días de la semana
+    <li>Lunes</li>
+    <li>Martes</li>
+    <li>Miércoles</li>
+    <li>Jueves</li>
+    <li>Viernes</li>
 
 ```
 
