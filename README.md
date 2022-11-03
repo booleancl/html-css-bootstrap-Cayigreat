@@ -228,8 +228,154 @@ En el ejemplo anterior el selector era la  misma etiqueta, es decir, la regla de
 
 El 'id' es un atributo de las etiquetas HTML. Toda etiqueta HTML puede tener el atributo ''d' para diferenciarlo del resto. Y podemos usar ese atributo como selector CSS usando la notación '#'
 
+
+Ejemplo de selector por id
 ```css
 #fname{
     border-radius: 6px;
 }
 ```
+
+Ejemplo de selector por clase
+```css
+.some-class{
+    border-radius: 6px;
+}
+```
+
+CSS es muy flexible y permite combinar selectores. Ej:
+
+```css
+/* Esta regla aplica a los párrafos con clase centered */
+p.centered{
+    text-align: center;
+    color: purple
+}
+```
+Si tenemos reglas que se repiten. Ej:
+```css
+
+h1{
+    text-align= center;
+    color: blue
+}
+
+h2{
+    text-align= center;
+    color: blue
+}
+```
+
+Podemos refactorizarlo en una sola regla
+
+```css
+h1, h2{
+    text-align= center;
+    color: blue
+}
+```
+
+Selector | Ejemplo | Descripción
+----- | ----- | -----
+#id | #some-id | Selecciona el elemento con `id="some-id"`
+.class | .some-class | Selecciona TODOS los elementos con clase `class="some-class"`
+element.class | p.intro | Selecciona solo los `<p>` con clase `class="intro"`
+element, element | div, p | Selecciona todos los elementos `<div>` y `<p>`
+
+### Modelo de caja
+
+En esencia cada elemento html está inserto dentro de una caja que consiste de: Margen, Borde, Padding y contenido.
+
+![Box Model](img/box-model.png)
+
+### Unidades de medidas
+
+En general, no solo en el desarrollo web. Podemos clasificar las unidades de medidas en dos grupos:
+
+- Unidades Absolutas: px
+- Unidades Relativas: %, rem, em, vh, vw
+
+#### rem
+Es una unidad de medida relativa al font-size del elemento raíz
+
+#### em
+es relativa al font-size del mismo elemento
+
+#### vh
+Es relativo al 1% del alto de la pantalla (viewport)
+
+#### vw
+Es relativo al 1% del ancho de la pantalla(viewport)
+
+
+### Tipos de diseños
+
+- El diseño estático: sirve para un solo tamaño de pantalla
+
+- El diseño fluído: se basa en porcentajes(%) dependiendo del tamaño de la pantalla
+
+- Diseño responsivo: tiene puntos de quiebre( distintos tamaños) para aplicar diferentes estilos
+
+### CSS MediaQueries
+
+
+Utiliza la regla `@media` para incluir un bloque de propiedades CSS solo si la condición es verdadera. Ejemplo:
+
+```CSS
+/* si el tamaño de la pantalla es de 600px o menor, el color de fondo del body será verde*/
+@media only screen and (max-width: 600px){
+    body{
+        background-color: green
+    }
+}
+```
+
+Existen ciertos tamaños de pantallas  más o menos estandarizados y estas serían sus respectivas media queries:
+
+```css
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {...}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {...}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {...}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {...}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {...} 
+```
+
+### Display
+
+```CSS
+/* si el tamaño de la pantalla es de 600px o menor, el color de fondo del body será verde*/
+@media only screen and (max-width: 600px){
+    body{
+        background-color: green
+    }
+    p{
+        display: none;
+    }
+ /* display none, oculta los párrafos si la condición se cumple*/
+}
+```
+
+El valor de la propiedad display modifica como el navegador posicionará la caja del elemento
+
+La caja puede ser de lado a lado, en ese caso la propiedad display tendrá el valor block.
+También podemos establecer el valor como inline y en ese caso, la caja será del menor tamaño posible. Ejemplo:
+
+
+```CSS
+.side-to-side{
+    display: block;
+    border: solid
+}
+.narrow{
+    display: block;
+    border: solid
+    }
