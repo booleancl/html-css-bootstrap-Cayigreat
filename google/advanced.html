@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Search</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="index.html">Google Search</a></li>                
+
+            </ul>
+        </nav>
+        <form action="https://www.google.com/search" id="advance">
+            <div class="mb">
+            Buscar páginas con... <br>
+            </div>
+            <div class="mb">
+                <label for="as_q">Todas estas palabras:</label>
+            </div>    
+            
+            <div class="mb">
+                <input type="text" name="as_q" id="as_q" id="as_q"><br>
+
+            </div>
+
+            <div class="mb">                               
+                <label for="as_epq">Con exactamente esta palabra o frase:</label>                
+                <input type="text" name="as_epq" id="as_epq"><br>
+            </div>
+
+            <div class="mb">
+                
+                <label for="as_op">Cualquiera de estas palabras</label>
+                <input type="text" name="as_op" id="as_op"><br>
+            </div>
+
+        <div class="mb">          
+            
+            <label for="as_eq">Ninguna de estas palabras:</label>
+            <input type="text" name="as_eq" id="as_eq"><br>
+        </div>           
+        
+        <input type="submit" value="Google Search" id="advanced_btn">
+        </form>
+    </body>
+</html>
